@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+option java_package = "com.sktelecom.blockchain.msgexpress.common.protocol.grpc";
+
+// producer
+service ProduceServer {
+    // message 전송
+    rpc sendMessage(sendMessageRequest) returns (sendMessageResponse) {}
+}
+
+// message 전송요청
+message sendMessageRequest {
+    // header
+    MessageHeader header = 1;
+
+    // sender information
+    RestAPI sender = 2;
+    // 회신유무
+    bool needToReply = 3;
+
+    // destination
+    RestAPI destinationAPI = 4;
+    // rest api 호출 재시도 회수
+    int32 retryCount = 5;
+    // rest api 호출 timeout
+    int32 timeout = 6;
+    // json jsonBody
+    string payload = 7;
+}
+
+// message 전송응답
+message sendMessageResponse {
+    // header
+    MessageHeader header = 1;
+    // message 전송결과
+    Result result = 2;
+    // 호출되었던 api 정보
+    RestAPI calledApi = 3;
+
+    // 응답 시스템
+    ResponseSystem responseSystem = 4;
+
+    // rest api 결과
+    int32 httpCode = 5;
+
+    // resrt api payload (json)
+    string payload = 6;
+}
+
+// header
+message MessageHeader {
+    // message ID (uuid)
+    string msgId = 1;
+    // message type
+    MsgType msgType = 2;
+    // topic name
+    string topicName = 3;
+    // timestamp (unix)
+    uint64 timestamp = 4;
+}
+
+// API 정보
+message RestAPI {
+    // host address
+    string host = 1;
+    // listen port
+    int32 port = 2;
+    // rest api name
+    string restApi = 3;
+}
+
+// sending message result
+enum Result {
+    SUCCESS = 0;
+    FAILURE = 1;
+}
+
+// message type
+enum MsgType {
+    REQUEST = 0;
+    RESPONSE = 1;
+}
+
+// rest method
+enum Method {
+    GET = 0;
+    POST = 1;
+    PUT = 2;
+    DELETE = 3;
+}
+
+// error point
+enum ResponseSystem {
+    KAFKA = 0;
+    RESTAPI = 1;
+}
