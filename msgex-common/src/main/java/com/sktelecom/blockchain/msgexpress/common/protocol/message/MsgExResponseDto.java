@@ -2,6 +2,7 @@ package com.sktelecom.blockchain.msgexpress.common.protocol.message;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 @Data @Builder
 public class MsgExResponseDto {
@@ -9,9 +10,28 @@ public class MsgExResponseDto {
     /** header */
     private MsgExHeaderDto header;
 
-    /** Rest 처리 결과  */
+    /** MsgEX Result */
+    private MsgExResult result;
+
+    /** API Result */
     private int httpCode;
 
-    /** Rest 처리 Message */
-    private String message;
+    /** rest Message */
+    private String jsonBody;
+
+    /**
+     * result
+     */
+    public enum MsgExResult {
+
+        SUCCESS (0),
+
+        FAILURE (1);
+
+        @Getter int value;
+
+        MsgExResult(int value) {
+            this.value = value;
+        }
+    }
 }

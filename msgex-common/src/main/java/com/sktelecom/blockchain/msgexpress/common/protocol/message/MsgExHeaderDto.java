@@ -27,14 +27,21 @@ public class MsgExHeaderDto {
      */
     public enum MsgType {
 
-        API_REQUEST((byte) 0),
-        API_RESPONSE((byte) 1),
-        BUS_REQUEST((byte) 2),
-        BUS_RESPONSE((byte) 3);
+        REQUEST(0),
+        RESPONSE(1);
 
-        @Getter byte value;
-        MsgType(byte value) {
+        @Getter int value;
+        MsgType(int value) {
             this.value = value;
+        }
+
+        /**
+         * to MsgType
+         * @param value
+         * @return
+         */
+        public static MsgType toMsgType(int value) {
+            return values()[value];
         }
     }
 }

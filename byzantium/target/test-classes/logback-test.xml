@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+
+    <!-- 개발용 Console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%date %-5level [%thread][%logger] - %message%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- rolling file appender -->
+    <appender name="FILE" class="ch.qos.logback.classic.sift.SiftingAppender">
+
+        <discriminator>
+            <Key>logHome</Key>
+            <DefaultValue>./log</DefaultValue>
+        </discriminator>
+
+        <sift>
+            <appender name="appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <file> ${logHome}/output.log </file>
+
+                <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <pattern>
+                            <pattern>
+                                {
+                                "timestamp": "%date{ISO8601}",
+                                "serviceId" : "unittest"
+                                }
+                            </pattern>
+                        </pattern>
+                        <logLevel />
+                        <loggerName />
+                        <message />
+                        <threadName />
+                        <stackTrace />
+                        <callerData />
+                    </providers>
+                </encoder>
+
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <fileNamePattern> ${logHome}/output.%d{yyyy-MM-dd_HH}.%i.log </fileNamePattern>
+                    <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                        <maxFileSize> 50MB </maxFileSize>
+                    </timeBasedFileNamingAndTriggeringPolicy>
+                </rollingPolicy>
+            </appender>
+        </sift>
+    </appender>
+
+    <!-- 비동기 Console Appender -->
+    <appender name="AsyncConsole" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize> 500 </queueSize>
+        <discardingThreshold> 0 </discardingThreshold>
+        <appender-ref ref="CONSOLE" />
+    </appender>
+
+    <!-- 비동기 File Appender -->
+    <appender name="AsyncFile" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize> 500 </queueSize>
+        <discardingThreshold> 0 </discardingThreshold>
+        <appender-ref ref="FILE" />
+    </appender>
+
+    <!-- 기본 Log Level -->
+    <root level="INFO" />
+
+    <!-- Service Package Log Level -->
+    <logger name="com.sktelecom.blockchain" level="DEBUG">
+        <appender-ref ref="AsyncFile" />
+        <appender-ref ref="AsyncConsole" />
+    </logger>
+
+</configuration>

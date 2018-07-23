@@ -4,9 +4,7 @@ import com.google.gson.Gson;
 import com.sktelecom.blockchain.byzantium.config.HttpClientConfigDto;
 import com.sktelecom.blockchain.byzantium.config.HttpServerConfigDto;
 import com.sktelecom.blockchain.byzantium.network.http.HttpServer;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto;
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExMessageDto;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExResponseDto;
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExRestAPI;
 import lombok.Builder;
 import lombok.Data;
@@ -17,8 +15,6 @@ import org.junit.Test;
 import java.io.IOException;
 
 import static com.sktelecom.blockchain.byzantium.network.http.HttpServer.Method.POST;
-import static com.sktelecom.blockchain.byzantium.utilities.TimeUtils.getUnixTimeStamp;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.BUS_RESPONSE;
 import static javax.servlet.http.HttpServletResponse.SC_OK;
 
 @Slf4j

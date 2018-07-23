@@ -136,7 +136,11 @@ public class HttpServer {
     }
 
     public enum Method {
-        GET, POST, PUT, DELETE
+        GET(0), POST(1), PUT(2), DELETE(3);
+        @Getter int value;
+        Method(int value) {
+            this.value = value;
+        }
     }
 
     @Getter @AllArgsConstructor

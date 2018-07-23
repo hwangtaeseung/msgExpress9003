@@ -1,10 +1,9 @@
 package com.sktelecom.blockchain.msgexpress.common.protocol.message;
 
+
 import com.sktelecom.blockchain.byzantium.network.http.HttpServer.Method;
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.Map;
 
 /**
  * Rest API
@@ -19,8 +18,6 @@ public class MsgExRestAPI {
     private Method method;
     // api uri
     private String api;
-    // rest parameters
-    private Map<String, Object> params;
     // JSON Payload
     private String jsonBody;
 
@@ -37,11 +34,6 @@ public class MsgExRestAPI {
                 .append(this.port)
                 .append("/")
                 .append(this.api);
-
-        if (this.params != null && !this.params.isEmpty()) {
-            result.append("?");
-            this.params.forEach((key, value) -> result.append(key).append("=").append(value));
-        }
 
         return result.toString();
     }

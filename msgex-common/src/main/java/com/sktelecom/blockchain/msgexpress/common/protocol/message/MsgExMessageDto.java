@@ -9,9 +9,6 @@ public class MsgExMessageDto {
     /** message header */
     private MsgExHeaderDto header;
 
-    /** 호출한 API의 응답을 받기 위한 API */
-    private int receivePort;
-
     /** 응답을 받을지 여부 */
     private boolean needToReply;
 

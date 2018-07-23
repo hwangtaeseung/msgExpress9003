@@ -15,7 +15,7 @@ import java.util.Arrays;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 @Slf4j
-public class HttpClient<SERVICE> {
+public class HttpClient<SERVICE> extends RawHttpClient {
 
     /** service **/
     private @Getter SERVICE service;
@@ -26,26 +26,12 @@ public class HttpClient<SERVICE> {
      */
     public HttpClient(HttpClientConfigDto config, Class<SERVICE> serviceClass, Interceptor... interceptors) {
 
-        // Connection Pool 생성
-        ConnectionPool pool = new ConnectionPool(config.getMaxIdleConnections(), config.getKeepAliveDuration(), SECONDS);
-
-        // http client builder
-        OkHttpClient.Builder builder = new OkHttpClient.Builder()
-                .connectionPool(pool)
-                .connectTimeout(config.getConnectTimeout(), SECONDS)
-                .readTimeout(config.getReadTimeout(), SECONDS)
-                .writeTimeout(config.getWriteTimeout(), SECONDS);
-
-        // interceptor 추가
-        Arrays.asList(interceptors).forEach(builder::addInterceptor);
-
-        // http client 생성
-        OkHttpClient httpClient = builder.build();
+        super(config, interceptors);
 
         // retrofit
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(String.format("http://%s:%d%s", config.getHost(), config.getPort(), config.getBaseUrl()))
-                .client(httpClient)
+                .client(this.getHttpClient())
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create()))
                 .build();
 

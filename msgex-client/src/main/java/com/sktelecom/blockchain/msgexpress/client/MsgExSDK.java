@@ -21,7 +21,8 @@ import static com.sktelecom.blockchain.byzantium.network.http.HttpServer.Method.
 import static com.sktelecom.blockchain.byzantium.utilities.TimeUtils.getUnixTimeStamp;
 import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExConst.CLIENT_MESSAGE_RECEIVE_URI;
 import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExConst.MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.*;
+import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.REQUEST;
+import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.RESPONSE;
 import static javax.servlet.http.HttpServletResponse.*;
 
 /**
@@ -71,7 +72,7 @@ public class MsgExSDK {
                             .header(MsgExHeaderDto
                                     .builder()
                                     .msgId(messageDto.getHeader().getMsgId())
-                                    .msgType(BUS_RESPONSE)
+                                    .msgType(RESPONSE)
                                     .timestamp(getUnixTimeStamp())
                                     .senderIP(this.httpServer.getConfig().getHttpHost())
                                     .senderTag("MicroService")
@@ -81,7 +82,7 @@ public class MsgExSDK {
                                             .pop(msgId)
                                             .orElse(this.transactionManager.getDefaultTransactionCallback())
                                             .apply(messageDto, null))
-                            .message("transaction not found")
+                            .jsonBody("transaction not found")
                             .build();
                 });
 
@@ -132,19 +133,18 @@ public class MsgExSDK {
             // create message id
             String messageId = messageID();
 
-            // convert payload from  DTO to String
+            // convert jsonBody from  DTO to String
             MsgExMessageDto message = MsgExMessageDto
                     .builder()
                     .header(MsgExHeaderDto
                             .builder()
                             .msgId(messageId)
-                            .msgType(API_REQUEST)
+                            .msgType(REQUEST)
                             .timestamp(getUnixTimeStamp())
                             .senderIP(receiveHost)
                             .senderTag("SDK-REQUEST")
                             .build())
                     .destinationAPI(restAPI)
-                    .receivePort(receivePort)
                     .needToReply(needToReply)
                     .build();
 
@@ -207,7 +207,7 @@ public class MsgExSDK {
                     .header(MsgExHeaderDto
                             .builder()
                             .msgId(messageId)
-                            .msgType(API_RESPONSE)
+                            .msgType(RESPONSE)
                             .timestamp(getUnixTimeStamp())
                             .senderIP(receivedMessage.getHeader().getSenderIP())
                             .senderTag("SDK-RESPONSE")
@@ -216,12 +216,10 @@ public class MsgExSDK {
                     .destinationAPI(MsgExRestAPI
                             .builder()
                             .host(receivedMessage.getHeader().getSenderIP())
-                            .port(receivedMessage.getReceivePort())
                             .api(CLIENT_MESSAGE_RECEIVE_URI + MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK)
                             .method(POST)
                             .jsonBody(payload)
                             .build())
-                    .receivePort(0)
                     .needToReply(false)
                     .build();
 
