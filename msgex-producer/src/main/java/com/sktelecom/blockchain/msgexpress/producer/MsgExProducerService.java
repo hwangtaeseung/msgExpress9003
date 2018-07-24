@@ -3,6 +3,7 @@ package com.sktelecom.blockchain.msgexpress.producer;
 
 import com.google.gson.Gson;
 import com.sktelecom.blockchain.byzantium.queue.kafka.KProducer;
+import com.sktelecom.blockchain.msgexpress.common.protocol.MsgExTransactionManager;
 import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.sendMessageRequest;
 import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.sendMessageResponse;
 import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.ProduceServerGrpc;
@@ -12,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Properties;
 
-import static com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.ResponseSystem.KAFKA;
 import static com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.Result.FAILURE;
 import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExConst.DEFAULT_TOPIC;
 import static java.lang.Integer.parseInt;
@@ -53,17 +53,19 @@ public class MsgExProducerService extends ProduceServerGrpc.ProduceServerImplBas
     @Override
     public void sendMessage(sendMessageRequest request, StreamObserver<sendMessageResponse> responseObserver) {
 
-        log.debug("receive 'sendMessage' message : msgId={}, msgtype={}, topic={}, jsonBody={}",
+        log.debug("receive 'sendMessage' message : msgId={}, msgtype={}, jsonBody={}",
                 request.getHeader().getMsgId(),
                 request.getHeader().getMsgType(),
-                request.getHeader().getTopicName(),
-                request.getRestAPI().getJsonBody());
+                request.getDestinationAPI().getJsonBody());
 
         // add transaction
         this.transactionManager.push(request.getHeader().getMsgId(), responseObserver);
 
         // send msg to kafka
-        this.producer.send(this.topics != null ? this.topics : request.getHeader().getTopicName(),
+        this.producer.send(
+
+                // topic
+                this.topics,
 
                 // key
                 request.getHeader().getMsgId(),
@@ -82,7 +84,7 @@ public class MsgExProducerService extends ProduceServerGrpc.ProduceServerImplBas
                     log.debug("send fail in kafka producer (msgId={})", request.getHeader().getMsgId());
 
                     // pop transaction which was failed
-                    transactionManager
+                    this.transactionManager
                             .pop(request.getHeader().getMsgId())
                             .ifPresent(observer -> {
                                 observer.onNext(

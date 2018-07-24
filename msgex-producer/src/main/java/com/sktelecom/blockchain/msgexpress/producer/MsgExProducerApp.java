@@ -5,6 +5,7 @@ import com.sktelecom.blockchain.byzantium.application.AbstractApplication;
 import com.sktelecom.blockchain.byzantium.network.grpc.GRPCServer;
 import com.sktelecom.blockchain.byzantium.queue.kafka.KConsumer;
 import com.sktelecom.blockchain.byzantium.queue.kafka.KProducer;
+import com.sktelecom.blockchain.msgexpress.common.protocol.MsgExTransactionManager;
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExAdaptor;
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExResponseDto;
 import lombok.extern.slf4j.Slf4j;
@@ -96,7 +97,7 @@ public class MsgExProducerApp extends AbstractApplication<Properties> {
                         .pop((String) record.key())
                         .ifPresent(observer -> {
                             log.debug("receive response message from kafka : msgId={}", record.key());
-                            observer.onNext(MsgExAdaptor.toMsgExResponse(gson.fromJson((String) record.value(), MsgExResponseDto.class)));
+                            observer.onNext(MsgExAdaptor.toSendMessageResponse(gson.fromJson((String) record.value(), MsgExResponseDto.class)));
                             observer.onCompleted();
                         }),
 

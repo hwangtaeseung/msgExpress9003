@@ -1,4 +1,4 @@
-package com.sktelecom.blockchain.msgexpress.producer;
+package com.sktelecom.blockchain.msgexpress.common.protocol;
 
 import io.grpc.stub.StreamObserver;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 import static com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.sendMessageResponse;
 
 @Slf4j
-class MsgExTransactionManager {
+public class MsgExTransactionManager {
 
     /** count of partition */
     private @Getter int countOfPartition;
@@ -25,7 +25,7 @@ class MsgExTransactionManager {
      * construction
      * @param countOfPartition
      */
-    MsgExTransactionManager(int countOfPartition) {
+    public MsgExTransactionManager(int countOfPartition) {
 
         // partition 수
         this.countOfPartition = countOfPartition;
@@ -41,7 +41,7 @@ class MsgExTransactionManager {
      * @param messageId
      * @param transactionCallback
      */
-    StreamObserver<sendMessageResponse> push(String messageId, StreamObserver<sendMessageResponse> transactionCallback) {
+    public StreamObserver<sendMessageResponse> push(String messageId, StreamObserver<sendMessageResponse> transactionCallback) {
         // put transaction callback
         return this.transactions
                 .get(getPartitionIndex(messageId))
@@ -53,7 +53,7 @@ class MsgExTransactionManager {
      * @param messageId
      * @return
      */
-    Optional<StreamObserver<sendMessageResponse>> pop(String messageId) {
+    public Optional<StreamObserver<sendMessageResponse>> pop(String messageId) {
         // execute exception callback
         return Optional.ofNullable(this.transactions
                 .get(getPartitionIndex(messageId))

@@ -13,18 +13,15 @@ message sendMessageRequest {
     // header
     MessageHeader header = 1;
 
-    // API to call
-    RestAPI restAPI = 2;
-
     // 회신유무
-    bool needToReply = 3;
+    bool needToReply = 2;
 
     // destination
-    RestAPI destinationAPI = 4;
+    RestAPI destinationAPI = 3;
     // rest api 호출 재시도 회수
-    int32 retryCount = 5;
+    int32 retryCount = 4;
     // rest api 호출 timeout
-    int32 timeout = 6;
+    int32 timeout = 5;
 }
 
 // message 전송응답
@@ -47,10 +44,8 @@ message MessageHeader {
     string msgId = 1;
     // message type
     MsgType msgType = 2;
-    // topic name
-    string topicName = 3;
     // timestamp (unix)
-    uint64 timestamp = 4;
+    uint64 timestamp = 3;
 }
 
 // API 정보

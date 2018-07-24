@@ -1,4 +1,4 @@
-package com.sktelecom.blockchain.msgexpress.client;
+package com.sktelecom.blockchain.msgexpress.client.http;
 
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExMessageDto;
 import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExResponseDto;

@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67be707d-8b7a-4c4e-9f9f-08fc3e6ae61f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExTransactionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/RawHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/RawHttpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/http/MsgExHttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExProducerHttpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/http/MsgExProducerHttpService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExTransactionManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-client/src/test/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDKTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-client/src/test/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDKTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExHeaderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExHeaderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExMessageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExMessageDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExRestAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExTransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/MsgExTransactionManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/msgex-producer/target/" />
     <ignored path="$PROJECT_DIR$/byzantium/target/" />
@@ -36,129 +29,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="basicmessage.proto" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="525">
-                    <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="330">
-                    <caret line="22" selection-start-line="22" selection-end-line="22" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="165">
-                    <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MsgExAdaptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgExConsumerApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgExSDK.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgExSDKTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/msgex-client/src/test/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDKTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="93" column="50" lean-forward="true" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KConsumer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/queue/kafka/KConsumer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgExProducerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="73" selection-start-line="73" selection-end-line="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgExResponseDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExResponseDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding>
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -169,8 +47,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExHeaderDto.java" />
-        <option value="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExTransactionManager.java" />
-        <option value="$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto" />
         <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExMessageDto.java" />
         <option value="$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerApp.java" />
@@ -178,12 +54,15 @@
         <option value="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpClient.java" />
         <option value="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/RawHttpClient.java" />
         <option value="$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpServer.java" />
-        <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java" />
         <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExRestAPI.java" />
-        <option value="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java" />
-        <option value="$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java" />
+        <option value="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExTransactionManager.java" />
+        <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/MsgExTransactionManager.java" />
+        <option value="$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto" />
+        <option value="$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java" />
+        <option value="$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java" />
         <option value="$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java" />
+        <option value="$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/msgex-client/src/test/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDKTest.java" />
       </list>
     </option>
@@ -213,10 +92,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2055" />
-    <option name="y" value="37" />
-    <option name="width" value="1669" />
-    <option name="height" value="964" />
+    <option name="x" value="2334" />
+    <option name="y" value="68" />
+    <option name="width" value="1447" />
+    <option name="height" value="909" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -234,196 +113,6 @@
               <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
               <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="protocol" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="protocol" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="producer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="msgexpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msgExpress9003" type="462c0819:PsiDirectoryNode" />
-              <item name="msgex-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -433,6 +122,9 @@
     </panes>
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.sktelecom.blockchain.msgexpress.common.protocol" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sktelecom.blockchain.msgexpress.producer" />
     </key>
@@ -449,20 +141,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MsgExSDKTest.call">
+    <configuration name="MsgExConsumerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sktelecom.blockchain.msgexpress.consumer.MsgExConsumerApp" />
+      <module name="msgex-consumer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sktelecom.blockchain.msgexpress.consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="MsgExProducerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sktelecom.blockchain.msgexpress.producer.MsgExProducerApp" />
       <module name="msgex-producer" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sktelecom.blockchain.msgexpress.producer.*" />
+          <option name="PATTERN" value="com.sktelecom.blockchain.msgexpress.common.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="MsgExSDKTest.call" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="msgex-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sktelecom.blockchain.msgexpress.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sktelecom.blockchain.msgexpress.client" />
+      <option name="MAIN_CLASS_NAME" value="com.sktelecom.blockchain.msgexpress.client.MsgExSDKTest" />
+      <option name="METHOD_NAME" value="call" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -502,8 +228,15 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Application.MsgExProducerApp" />
+      <item itemvalue="Application.MsgExConsumerApp" />
+      <item itemvalue="JUnit.MsgExSDKTest.call" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MsgExSDKTest.call" />
+        <item itemvalue="Application.MsgExConsumerApp" />
         <item itemvalue="Application.MsgExProducerApp" />
       </list>
     </recent_temporary>
@@ -521,27 +254,40 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MsgExSDKTest_call - 2018.07.24 at 13h 03m 40s.xml">
+      <configuration name="MsgExSDKTest.call" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MsgExSDKTest_call - 2018.07.24 at 13h 16m 30s.xml">
+      <configuration name="MsgExSDKTest.call" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MsgExSDKTest_call - 2018.07.24 at 13h 19m 47s.xml">
+      <configuration name="MsgExSDKTest.call" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MsgExSDKTest_call - 2018.07.24 at 13h 39m 12s.xml">
+      <configuration name="MsgExSDKTest.call" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="2055" y="37" width="1669" height="964" extended-state="0" />
-    <editor active="true" />
+    <frame x="2334" y="68" width="1447" height="909" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="right" id="Cargo" order="0" />
-      <window_info anchor="bottom" id="Messages" order="4" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.3293011" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.08496332" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.3066333" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.16037063" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.2715054" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.27323076" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.25873128" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3294423" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32942554" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -560,27 +306,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/msgex-common/target/generated-sources/protobuf/grpc-java/com/sktelecom/blockchain/msgexpress/common/protocol/grpc/ProduceServerGrpc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExTransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExTransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/queue/kafka/KProducer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -666,16 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/http/HttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -687,73 +402,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExRestAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/queue/kafka/KConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExResponseDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="73" selection-start-line="73" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
         </state>
       </provider>
     </entry>
@@ -768,17 +420,181 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java">
+    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExTransactionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/http/MsgExHttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/http/MsgExProducerHttpService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/MsgExTransactionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/byzantium/src/main/java/com/sktelecom/blockchain/byzantium/network/grpc/GRPCClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/jre/lib/rt.jar!/java/lang/Runnable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/target/generated-sources/protobuf/grpc-java/com/sktelecom/blockchain/msgexpress/common/protocol/grpc/ProduceServerGrpc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="212" column="7" lean-forward="true" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/19.0/guava-19.0.jar!/com/google/common/util/concurrent/ListenableFuture.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExResponseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExAdaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/java/com/sktelecom/blockchain/msgexpress/common/protocol/message/MsgExRestAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/consumer-output.2018-07-24_11.0.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/consumer-output.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-10">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/producer-output.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="291">
+          <caret line="30" column="117" lean-forward="true" selection-start-line="30" selection-start-column="117" selection-end-line="30" selection-end-column="117" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/msgex-client/src/test/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDKTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="93" column="50" lean-forward="true" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-common/src/main/proto/basicmessage.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-client/src/main/java/com/sktelecom/blockchain/msgexpress/client/MsgExSDK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+          <folding>
+            <element signature="e#10203#10204#0" expanded="true" />
+            <element signature="e#10254#10255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="61" column="87" selection-start-line="61" selection-start-column="87" selection-end-line="61" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-producer/src/main/java/com/sktelecom/blockchain/msgexpress/producer/MsgExProducerApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="106" column="74" selection-start-line="106" selection-start-column="74" selection-end-line="106" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgex-consumer/src/main/java/com/sktelecom/blockchain/msgexpress/consumer/MsgExConsumerApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
         </state>
       </provider>
     </entry>

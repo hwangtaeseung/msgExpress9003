@@ -15,7 +15,7 @@ public class MsgExAdaptor {
                 .builder()
                 .header(toMsgExHeader(request.getHeader()))
                 .needToReply(request.getNeedToReply())
-                .destinationAPI(toMsgExRestAPI(request.getRestAPI()))
+                .destinationAPI(toMsgExRestAPI(request.getDestinationAPI()))
                 .retryCount(request.getRetryCount())
                 .timeout(request.getTimeout())
                 .build();
@@ -26,7 +26,7 @@ public class MsgExAdaptor {
      * @param responseDto
      * @return
      */
-    public static sendMessageResponse toMsgExResponse(MsgExResponseDto responseDto) {
+    public static sendMessageResponse toSendMessageResponse(MsgExResponseDto responseDto) {
         return sendMessageResponse.newBuilder()
                 .setHeader(toMsgHeader(responseDto.getHeader()))
                 .setResult(Result.values()[responseDto.getResult().getValue()])

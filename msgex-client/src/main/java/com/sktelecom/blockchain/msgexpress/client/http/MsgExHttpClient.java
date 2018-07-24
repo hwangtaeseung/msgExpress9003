@@ -1,4 +1,4 @@
-package com.sktelecom.blockchain.msgexpress.client;
+package com.sktelecom.blockchain.msgexpress.client.http;
 
 import com.sktelecom.blockchain.byzantium.config.HttpClientConfigDto;
 import com.sktelecom.blockchain.byzantium.network.http.HttpClient;

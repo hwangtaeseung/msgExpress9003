@@ -1,29 +1,20 @@
 package com.sktelecom.blockchain.msgexpress.client;
 
 import com.google.gson.Gson;
-import com.sktelecom.blockchain.byzantium.config.HttpClientConfigDto;
-import com.sktelecom.blockchain.byzantium.config.HttpServerConfigDto;
+import com.sktelecom.blockchain.byzantium.network.grpc.GRPCClient;
 import com.sktelecom.blockchain.byzantium.network.http.HttpServer;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExMessageDto;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExResponseDto;
-import com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExRestAPI;
-import lombok.Getter;
+import com.sktelecom.blockchain.byzantium.utilities.TimeUtils;
+import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage;
+import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.sendMessageRequest;
+import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.Basicmessage.sendMessageResponse;
+import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.ProduceServerGrpc;
+import com.sktelecom.blockchain.msgexpress.common.protocol.grpc.ProduceServerGrpc.ProduceServerFutureStub;
 import lombok.extern.slf4j.Slf4j;
-import retrofit2.Response;
 
-import java.util.Arrays;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
-import java.util.function.Consumer;
-
-import static com.sktelecom.blockchain.byzantium.network.http.HttpServer.Method.POST;
-import static com.sktelecom.blockchain.byzantium.utilities.TimeUtils.getUnixTimeStamp;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExConst.CLIENT_MESSAGE_RECEIVE_URI;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExConst.MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.REQUEST;
-import static com.sktelecom.blockchain.msgexpress.common.protocol.message.MsgExHeaderDto.MsgType.RESPONSE;
-import static javax.servlet.http.HttpServletResponse.*;
+import java.util.concurrent.Executors;
 
 /**
  * Message Express SDK
@@ -31,236 +22,109 @@ import static javax.servlet.http.HttpServletResponse.*;
 @Slf4j
 public class MsgExSDK {
 
-    /** HTTP Server (to receive Asynchronous Response) */
-    private @Getter HttpServer httpServer;
-
-    /** transaction manager */
-    private MsgExTransactionManager transactionManager;
-
-    /** HTTP Client */
-    private @Getter MsgExHttpClient httpClient;
-
     /** JSON parser */
     private static Gson gson = new Gson();
 
+    /** grpc client */
+    private GRPCClient<ProduceServerFutureStub> grpcClient;
+
+    /** work thread pool */
+    private ExecutorService executorService;
+
+    /** the count to retry to connect */
+    private int retryCount = 3;
+
+    /** api timeout */
+    private int timeout = 5;
+
     /**
      * constructor
-     * @param serverConfig
-     * @param clientConfig
-     * @param numOfPartition
+     * @param host
+     * @param port
      */
-    public MsgExSDK(HttpServerConfigDto serverConfig, HttpClientConfigDto clientConfig, int numOfPartition, HttpServer.Handler... handlers) {
+    public MsgExSDK(String host, int port, int countOfWorkThread) {
 
-        // create transaction manager
-        this.transactionManager = new MsgExTransactionManager(numOfPartition);
+        // create grpc client
+        this.grpcClient = new GRPCClient<>(host, port, ProduceServerGrpc::newFutureStub);
 
-        // create http server
-        this.httpServer = new HttpServer()
+        // create executeService
+        this.executorService = Executors.newFixedThreadPool(countOfWorkThread);
+    }
 
-                // response receiver
-                .addHandler(POST, CLIENT_MESSAGE_RECEIVE_URI + MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK, (message, response) -> {
+    /**
+     * call API
+     * @param host
+     * @param port
+     * @param method
+     * @param apiName
+     * @param dto
+     * @param receiveCallback
+     * @param <DTO>
+     */
+    public <DTO> MsgExSDK callApi(String host, int port, HttpServer.Method method, String apiName, boolean needToReply, DTO dto, Runnable receiveCallback) {
+        // execute rpc by grpc client
+        this.grpcClient
+                .getStub()
+                .sendMessage(getSendMessageRequest(host, port, method, apiName, needToReply, dto))
+                .addListener(receiveCallback, this.executorService);
 
-                    // message id
-                    String msgId = message.params(MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK);
+        return this;
+    }
 
-                    // json parsing
-                    MsgExMessageDto messageDto = gson.fromJson(message.body(), MsgExMessageDto.class);
+    /**
+     * call API
+     * @param host
+     * @param port
+     * @param method
+     * @param apiName
+     * @param needToReply
+     * @param dto
+     * @param <DTO>
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    public <DTO> sendMessageResponse callApi(String host, int port, HttpServer.Method method, String apiName, boolean needToReply, DTO dto) throws ExecutionException, InterruptedException {
+        return this.grpcClient.getStub().sendMessage(getSendMessageRequest(host, port, method, apiName, needToReply, dto)).get();
+    }
 
-                    // execute transaction callback
-                    return MsgExResponseDto
-                            .builder()
-                            .header(MsgExHeaderDto
-                                    .builder()
-                                    .msgId(messageDto.getHeader().getMsgId())
-                                    .msgType(RESPONSE)
-                                    .timestamp(getUnixTimeStamp())
-                                    .senderIP(this.httpServer.getConfig().getHttpHost())
-                                    .senderTag("MicroService")
-                                    .build())
-                            .httpCode(
-                                    this.transactionManager
-                                            .pop(msgId)
-                                            .orElse(this.transactionManager.getDefaultTransactionCallback())
-                                            .apply(messageDto, null))
-                            .jsonBody("transaction not found")
-                            .build();
-                });
-
-        // add handlers
-        Arrays.asList(handlers).forEach(this.httpServer::addHandler);
-
-        // execute http server
-        this.httpServer.run(serverConfig);
-
-        // create http client
-        this.httpClient = new MsgExHttpClient(clientConfig);
+    /**
+     * create sendMessageRequest
+     * @param host
+     * @param port
+     * @param method
+     * @param apiName
+     * @param needToReply
+     * @param dto
+     * @param <DTO>
+     * @return
+     */
+    private <DTO> sendMessageRequest getSendMessageRequest(String host, int port, HttpServer.Method method, String apiName, boolean needToReply, DTO dto) {
+        return sendMessageRequest.newBuilder()
+                .setHeader(Basicmessage.MessageHeader.newBuilder()
+                        .setMsgId(messageID())
+                        .setMsgType(Basicmessage.MsgType.REQUEST)
+                        .setTimestamp(TimeUtils.getUnixTimeStamp())
+                        .build())
+                .setDestinationAPI(Basicmessage.RestAPI.newBuilder()
+                        .setHost(host)
+                        .setPort(port)
+                        .setMethod(Basicmessage.Method.values()[method.getValue()])
+                        .setRestApi(apiName)
+                        .setJsonBody(gson.toJson(dto))
+                        .build())
+                .setNeedToReply(needToReply)
+                .setRetryCount(this.retryCount)
+                .setTimeout(this.timeout)
+                .build();
     }
 
     /**
      * shutdown
+     * @throws InterruptedException
      */
-    public void shutdown() {
-        this.httpServer.shutdown();
-    }
-
-
-    /**
-     * call api
-     * @param receiveHost
-     * @param receivePort
-     * @param restAPI
-     * @param transactionCallback
-     * @return
-     */
-    public void call(String receiveHost, int receivePort, MsgExRestAPI restAPI, MsgExTransactionManager.Callback transactionCallback) {
-        call(receiveHost, receivePort, restAPI, true, transactionCallback);
-    }
-
-    /**
-     * call api
-     * @param receiveHost
-     * @param receivePort
-     * @param restAPI
-     * @param needToReply
-     * @param transactionCallback
-     * @return
-     */
-    public void call(String receiveHost, int receivePort, MsgExRestAPI restAPI, boolean needToReply, MsgExTransactionManager.Callback transactionCallback) {
-
-        // work thread 로 실행
-        this.httpClient.getExecutorService().execute(() -> {
-
-            // create message id
-            String messageId = messageID();
-
-            // convert jsonBody from  DTO to String
-            MsgExMessageDto message = MsgExMessageDto
-                    .builder()
-                    .header(MsgExHeaderDto
-                            .builder()
-                            .msgId(messageId)
-                            .msgType(REQUEST)
-                            .timestamp(getUnixTimeStamp())
-                            .senderIP(receiveHost)
-                            .senderTag("SDK-REQUEST")
-                            .build())
-                    .destinationAPI(restAPI)
-                    .needToReply(needToReply)
-                    .build();
-
-            // push transaction callback
-            this.transactionManager.push(messageId, transactionCallback);
-
-            // send response message
-            transferMessage(message,
-
-                    // execution callback
-                    msg -> {
-                        Response<MsgExResponseDto> response = httpClient.getService().transferMessage(messageId, msg).execute();
-
-                        log.debug("SDK return value => httpCode={}, body={}", response.code(), response.body());
-
-                        return response;
-                    },
-
-                    // exception callback
-                    exception -> {
-                        // pop transaction
-                        this.transactionManager
-                                .pop(messageId)
-                                .ifPresent(callback -> callback.apply(null, exception));
-                    });
-        });
-
-    }
-
-    /**
-     * reply response that related to call
-     * @param message
-     * @param payload
-     * @param payloadClass
-     * @param <DTO>
-     * @return
-     */
-    public static <DTO> void reply(MsgExMessageDto message, DTO payload, Class<DTO> payloadClass, Callback<MsgExMessageDto, MsgExResponseDto> callback, ExecutorService executorService) {
-        reply(message, gson.toJson(payload, payloadClass), callback, executorService);
-    }
-
-    /**
-     * reply MsgEX Message
-     * @param receivedMessage
-     * @param payload
-     */
-    public static void reply(MsgExMessageDto receivedMessage, String payload, Callback<MsgExMessageDto, MsgExResponseDto> callback, ExecutorService executorService) {
-
-        // work thread 로 실행
-        executorService.execute(() -> {
-
-            log.debug("--- in consumer ===> {}", receivedMessage.getHeader());
-
-            // message ID
-            String messageId = receivedMessage.getHeader().getMsgId();
-
-            // create msgex message to reply
-            MsgExMessageDto message = MsgExMessageDto
-                    .builder()
-                    .header(MsgExHeaderDto
-                            .builder()
-                            .msgId(messageId)
-                            .msgType(RESPONSE)
-                            .timestamp(getUnixTimeStamp())
-                            .senderIP(receivedMessage.getHeader().getSenderIP())
-                            .senderTag("SDK-RESPONSE")
-                            .build())
-                    // caller's rest api information to receive response message
-                    .destinationAPI(MsgExRestAPI
-                            .builder()
-                            .host(receivedMessage.getHeader().getSenderIP())
-                            .api(CLIENT_MESSAGE_RECEIVE_URI + MESSAGE_RECEIVE_URI_PARAM_FOR_SPARK)
-                            .method(POST)
-                            .jsonBody(payload)
-                            .build())
-                    .needToReply(false)
-                    .build();
-
-            // transfer response message
-            transferMessage(message, callback, null);
-        });
-    }
-
-    /**
-     * message transfer
-     * @param messageDto
-     *
-     */
-    private static <T, R> void transferMessage(T messageDto, Callback<T, R> callback, Consumer<Exception> exceptionCallback) {
-
-        try {
-            // send message to message express
-            retrofit2.Response response = callback.run(messageDto);
-
-            // check result HTTP
-            switch (response.code()) {
-                case SC_OK:
-                case SC_CREATED:
-                case SC_ACCEPTED:
-                {
-                    log.debug("message express response (httpCode={}, body={})",
-                            response.code(), response.body());
-                    break;
-                }
-                // error
-                default:
-                {
-                    log.error("send fail (httpCode={}, body={})", response.code(), response.body());
-                    throw new Exception("{ httpError : " + response.code() + " }");
-                }
-            }
-
-        } catch (Exception e) {
-            log.error("message transfer error", e);
-            if (exceptionCallback != null) exceptionCallback.accept(e);
-        }
+    public void shutdown() throws InterruptedException {
+        this.grpcClient.shutdown();
     }
 
     /**
@@ -269,14 +133,5 @@ public class MsgExSDK {
      */
     private static String messageID() {
         return UUID.randomUUID().toString();
-    }
-
-    /**
-     * SDK Callback
-     * @param <T>
-     * @param <R>
-     */
-    public interface Callback<T, R> {
-        Response<R> run(T messageDto) throws Exception;
     }
 }
